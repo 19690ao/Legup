@@ -47,8 +47,9 @@ public class HomePanel extends LegupPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             boolean loaded = legupUI.getProofEditor().loadPuzzle();;
+            legupUI.displayPanel(1);
             if (loaded) {
-                legupUI.displayPanel(1);
+                legupUI.displayPanel(0);
             }
         }
     };
@@ -57,8 +58,9 @@ public class HomePanel extends LegupPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             boolean loaded = legupUI.getPuzzleEditor().loadPuzzle();
-            if (loaded) {
-                legupUI.displayPanel(2);
+            legupUI.displayPanel(2);
+            if (!loaded) {
+                legupUI.displayPanel(0);
             }
         }
     };
