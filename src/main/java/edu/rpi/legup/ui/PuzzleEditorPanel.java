@@ -44,7 +44,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
     private ElementFrame elementFrame;
     private JPanel treePanel;
     private LegupUI legupUI;
-    private EditorElementController editorElementController;
+    private EditorElementController editorElementController = new EditorElementController();
     final static int[] TOOLBAR_SEPARATOR_BEFORE = {2, 4, 8};
 
     public PuzzleEditorPanel(FileDialog fileDialog, JFrame frame, LegupUI legupUI) {
@@ -58,7 +58,6 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         JSplitPane splitPanel;
         JPanel elementBox = new JPanel(new BorderLayout());
 
-        editorElementController = new EditorElementController();
         elementFrame = new ElementFrame(editorElementController);
         elementBox.add(elementFrame, BorderLayout.WEST);
 
