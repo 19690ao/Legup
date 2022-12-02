@@ -47,6 +47,9 @@ public class HomePanel extends LegupPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             Object[] items = legupUI.getProofEditor().promptPuzzle();
+            if (items == null) {
+                return;
+            }
             String fileName = (String) items[0];
             File puzzleFile = (File) items[1];
             legupUI.displayPanel(1);
@@ -388,7 +391,8 @@ public void checkfolder(){
 
 
                             }
-                            //文本节点数据
+
+                            //Prints characters
                             @Override
                             public void characters(char[] ch, int start, int length) throws SAXException {
                                 System.out.println(new String(ch,start,length));
