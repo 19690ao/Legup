@@ -384,6 +384,7 @@ public void checkfolder(){
 
                             }
 
+                            //Prints characters
                             @Override
                             public void characters(char[] ch, int start, int length) throws SAXException {
                                 System.out.println(new String(ch,start,length));
