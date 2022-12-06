@@ -60,6 +60,7 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
         this.frame = frame;
         this.legupUI = legupUI;
         setLayout(new BorderLayout());
+        setToolBarButtons(new JButton[ToolbarName.values().length]);
     }
 
     protected void setupContent() {
@@ -185,7 +186,6 @@ public class PuzzleEditorPanel extends LegupPanel implements IHistoryListener {
     }
 
     private void setupToolBar() {
-        setToolBarButtons(new JButton[ToolbarName.values().length]);
         for (int i = 0; i < ToolbarName.values().length; i++) {
             String toolBarName = ToolbarName.values()[i].toString();
             URL resourceLocation = ClassLoader.getSystemClassLoader().getResource("edu/rpi/legup/images/Legup/" + toolBarName + ".png");
