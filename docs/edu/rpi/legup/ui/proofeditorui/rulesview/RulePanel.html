@@ -14,7 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -621,13 +621,14 @@ extends javax.swing.JPanel</pre>
 <div class="block">Search a certain rule in all the puzzles and set it for the searchBarPanel</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>puzzle</code> - , ruleName
-                <p>
-                This function is the searching algorithm for "public void setSearchBar(Puzzle allPuzzle)" (below)
-                <p>
-                It takes two param Puzzle puzzle and String ruleName
-                puzzle contains rules, this function will compare each rule of puzzle with ruleName,
-                to find exact same, similar rules, or all the rules with same start letter (if input is a signal letter)</dd>
+<dd><code>puzzle</code> - puzzle where the rule is being searched for</dd>
+<dd><code>ruleName</code> - rule that is being compared to each puzzle
+
+ This function is the searching algorithm for "public void setSearchBar(Puzzle allPuzzle)" (below)
+
+ It takes two param Puzzle puzzle and String ruleName
+ puzzle contains rules, this function will compare each rule of puzzle with ruleName,
+ to find exact same, similar rules, or all the rules with same start letter (if input is a signal letter)</dd>
 </dl>
 </li>
 </ul>
@@ -640,11 +641,17 @@ extends javax.swing.JPanel</pre>
 <pre class="methodSignature">public static&nbsp;double&nbsp;similarityCheck&#8203;(java.lang.String&nbsp;s1,
                                      java.lang.String&nbsp;s2)</pre>
 <div class="block">Calculates the similarity (a number within 0 and 1) between two strings.
- This funtion will take two para String s1 and String s2, which s1 is the user's input
- and s2 is the compared really rule name
- <p>
+ This function will take two para String s1 and String s2, which s1 is the user's input
+ and s2 is the compared really rule name</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>s1</code> - user's input</dd>
+<dd><code>s2</code> - the compared really rule name</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a similarity degree between 0 and 1
  similarityCheck will use a helper function to calculate a similarity degree(from 0 to 1).
- closer to 0 means less similar, and closer to 1 means more similar.</div>
+ closer to 0 means less similar, and closer to 1 means more similar.</dd>
+</dl>
 </li>
 </ul>
 <a id="editDistance(java.lang.String,java.lang.String)">
@@ -656,6 +663,13 @@ extends javax.swing.JPanel</pre>
 <pre class="methodSignature">public static&nbsp;int&nbsp;editDistance&#8203;(java.lang.String&nbsp;s1,
                                java.lang.String&nbsp;s2)</pre>
 <div class="block">Help function for similarityCheck();</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>s1</code> - user's input</dd>
+<dd><code>s2</code> - the compared really rule name</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a similarity degree between 0 and 1</dd>
+</dl>
 </li>
 </ul>
 <a id="setSearchBar(edu.rpi.legup.model.Puzzle)">
@@ -669,6 +683,10 @@ extends javax.swing.JPanel</pre>
  search bar allows user to input a name to get relative rules
  once a name is entered and click ok will load (a/several) rule icon,
  which has all the functions just as other rule icons.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>allPuzzle</code> - name of rule input</dd>
+</dl>
 </li>
 </ul>
 <a id="setSelectionByRule(edu.rpi.legup.model.rules.Rule)">
